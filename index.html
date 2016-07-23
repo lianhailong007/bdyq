@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度舆情</title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/body.css">
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+</head>
+<body>
+	<div class="head-box">
+		<div class="head-in">
+			<a href="javascript:;" class="head-img"></a>
+			<ul class="head-left">
+					<li><a href="javascript:;">首页</a></li>
+					<li><a href="javascript:;">产品介绍</a></li>
+					<li><a href="javascript:;">用户版</a></li>
+			</ul>
+			<div class="head-right">
+					<a href="javascript:;">登录</a>
+					<a href="javascript:;">手机客户端</a>
+					<a href="javascript:;">百度司南</a>
+					<a href="javascript:;">联系我们</a>
+					<a href="javascript:;">申请使用</a>
+			</div>
+		</div>
+	</div>
+	<div class="main-box">
+		<div class="section">
+			<div class="inner">
+				<div class="title1"></div>
+				<div class="title2"></div>
+				<div class="title3"><img src="img/cloud1.png" alt=""></div>
+				<div class="title4"><img src="img/cloud2.png" alt=""></div>
+				<div class="title5"><img src="img/xyun.png" alt=""></div>
+				<div class="title6"><img src="img/xyun.png" alt=""></div>
+				<a href="javascript:;" class="btn"></a>
+				<div class="denglu">
+					<div class="user">
+						<div></div>
+						<input type="text" name="" id="" value="用户名">
+					</div>
+					<div class="pw">
+						<div></div>
+						<input type="text" name="" id="" value="密码">
+					</div>
+					<div class="yz">
+						<input type="text" name="" id="" value="验证码">
+						<div><img src="img/888.png" alt=""></div>
+					</div>
+					<div class="dl">登录</div>
+					<div class="other">
+						<div class="fl">
+							<span></span>
+							<a href="javascript:;">安全控件常见问题</a>
+						</div>
+						<div class="fr">
+							<a href="javascript:;">忘记密码</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box-bottom">
+					<div class="b1"></div>
+					<div class="b2"></div>
+					<div class="b3"></div>
+					<div class="ship"></div>
+				</div>
+		</div>
+		<div class="section">
+			<div class="inner one">
+				<div class="title">
+					<h3></h3>
+					<div class="title-in">
+						<h4>数据收集与处理</h4>
+						<p>15年专业数据收集与语义分析技术积累<br>卓越极致,不断攀登</p>
+					</div>
+				</div>
+				<img src="img/bg2_2.png" class="inner-r">
+				<div class="boxs">
+					<div class="boxs1"></div>
+					<div class="boxs2"></div>
+					<div class="boxs3"></div>
+					<div class="boxs4"></div>
+					<div class="boxs5"></div>
+				</div>
+				<a href="javascript:;" class="btn"></a>
+			</div>
+		</div>
+		<div class="section">
+			<div class="inner two">
+				<div class="title">
+					<h3></h3>
+					<div class="title-in">
+						<h4>舆情分析逻辑与架构</h4>
+						<p>声量诊断、传播分析、感情提炼、受众画像<br>有方法论,更有智慧</p>
+					</div>
+				</div>
+				<img src="img/bg3_3.png" class="inner-r">
+				<div class="bg"><img src="img/2.png" alt=""></div>
+				<div class="boxs">
+					<div class="boxs1"></div>
+					<div class="boxs2"></div>
+					<div class="boxs3"></div>
+					<div class="boxs4"></div>
+					<div class="boxs5"></div>
+				</div>
+				<a href="javascript:;" class="btn"></a>
+			</div>
+		</div>
+		<div class="section">
+			<div class="inner three">
+				<div class="title">
+					<h3></h3>
+					<div class="title-in">
+						<h4>专业数据可视化</h4>
+						<p>非凡的数据洞察和可视化能力<br>精研数据,惊艳所见</p>
+					</div>
+				</div>
+				<img src="img/bg4_1.png" class="inner-r">
+				<div class="bg"><img src="img/1.png" alt=""></div>
+				<span>© 2014 Baidu使用百度前必读</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+	$(function(){
+		var i = $(".box-bottom")
+		var l = $(".one")
+		var l2 = $(".two")
+		var l3 = $(".three")
+		$(".main-box").fullpage({
+			navigation:true,
+			navigationTooltips:["登录百度舆情","领先：数据处理与收集","全面：分析舆情逻辑与架构","专业：专业数据可视化"],
+			afterLoad:function(anchorLink,index){
+				if(index==1){
+					i.attr("id","active");
+				}
+				if(index==2){
+					l.attr("id","active");
+				}
+				if(index==3){
+					l2.attr("id","active");
+				}
+				if(index==4){
+					l3.attr("id","active");
+				}
+			},
+			onLeave:function(index,nextIndex,direction){
+				if(index==1){
+					i.removeAttr("id");
+				}
+				if(index==2){
+					l.removeAttr("id");
+				}
+				if(index==3){
+					l2.removeAttr("id");
+				}
+				if(index==4){
+					l3.removeAttr("id");
+				}
+			}
+		});
+		$(".btn").click(function(){
+			$.fn.fullpage.moveSectionDown();
+		})
+	})
+</script>
